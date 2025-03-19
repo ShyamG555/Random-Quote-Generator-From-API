@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 1s ease-in-out;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30%;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  .quote-box {
+    color: #333;
+  }
+  
+  #quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  
+  #quote-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .buttons {
+    margin-top: 50px;
+  
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+
+  .popup{
+    position: absolute;
+    border-radius: 8px;
+    top: 50%;
+    left: 60%;
+    background-color: #962f9d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    opacity: 0;               /* hidden by defaukt */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  }
+
+  .popup.show{
+    opacity: 1;
+    visibility: visible;
+  }
