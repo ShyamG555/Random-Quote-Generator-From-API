@@ -1,4 +1,4 @@
-# Random-Quote-Generator-From-API
+# Random-Quote-Generator-From-API [Find it Live : https://random-quote-generator-from-api.vercel.app/]
 
 A simple web application that fetches and displays random quotes from a very wonderful platform [Free API](https://freeapi.app/) . Users can view a new quote, copy it to the clipboard, share it on Twitter, and export it as an image. The background changes dynamically with each new quote.
 
