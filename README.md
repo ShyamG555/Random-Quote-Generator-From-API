@@ -51,4 +51,4 @@ A simple web application that fetches and displays random quotes from a very won
 ### Prerequisites
 
 - A modern web browser (e.g., Chrome, Firefox, Edge).
-- An internet connection (to fetch quotes and background images).
+- An internet connection (to fetch quotes).
