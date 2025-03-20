@@ -4,12 +4,13 @@ const getNewQuoteBtn = document.getElementById("new-quote-btn");
 const copyToClipBoardBtn = document.getElementById("copy-btn");
 const shareTwitterBtn = document.getElementById("twitter-btn");
 const exportImageBtn = document.getElementById("export-btn");
+const body = document.body
 
 
 async function getRandomQuote(){      // function to get randon quote from API
    
     const apiUrl = 'https://api.freeapi.app/api/v1/public/quotes/quote/random'
-
+    getRandomBg()
     try{
         const response = await fetch(apiUrl);     
         const apiData = await response.json()    // converting response to JSON
@@ -41,13 +42,13 @@ async function copyQuoteAndAuthor() {
 
     setTimeout(() => {
         popup.classList.remove('show');      // hiding popup after 2 seconds 
-    }, 2 * 1000);
+    }, 1000);
 
     }catch(error){
         console.error(`Failed to copy: ${error}`)
     }
 }
-copyToClipBoardBtn.addEventListener('click', copyQuoteAndAuthor)
+copyToClipBoardBtn.addEventListener('click', copyQuoteAndAuthor)          // copy to clipboard button 
 
 
 shareTwitterBtn.addEventListener('click', () => {                   // share on twitter button function
@@ -56,7 +57,28 @@ shareTwitterBtn.addEventListener('click', () => {                   // share on 
         window.open(twitterUrl)
 })
 
+function getRandomBg (){
+    const images = [
+        './images/img1.jpg',
+        './images/img2.jpg',
+        './images/img3.jpg',
+        './images/img4.jpg',
+        './images/img5.jpg',
+        './images/img6.jpg'
+    ]
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    body.style.backgroundImage = `url('${randomImage}')`;
 
+}
+
+exportImageBtn.addEventListener('click', () => {
+    html2canvas(document.querySelector('.quote-box-for-image')).then(canvas => {
+      const link = document.createElement('a');
+      link.download = 'quote.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  });
 
 getRandomQuote()
 
